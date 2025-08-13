@@ -1,0 +1,298 @@
+.article {
+    display: grid;
+    grid-template-columns: var(--main-column-width) 1fr;
+    grid-gap: 0 1em;
+    width: 100%;
+}
+
+.article__meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: var(--line-space);
+    margin-bottom: calc(2 * var(--line-space));
+    padding-bottom: var(--line-space);
+    color: var(--color-subtext);
+    font-weight: 300;
+    border-bottom: 1px solid var(--color-accent);
+}
+
+.article__meta > :not(:last-child)::after {
+    display: inline-block;
+    padding: 0 0.5em;
+    color: var(--color-delimeter);
+    content: '·';
+}
+
+.article > * {
+    grid-column: 1 / span 1;
+}
+
+.article .article__head {
+    grid-column: 1 / -1;
+}
+
+.article__head > * {
+    max-width: var(--max-column-width);
+}
+
+.article.debug {
+    background-image: linear-gradient(to bottom, transparent 0 95%, lightblue 0);
+    background-size: 100% var(--line-space);
+}
+
+.article h3 {
+    margin-bottom: var(--line-space);
+}
+
+.article a {
+    color: var(--color-link);
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 2px;
+}
+
+.article a:visited {
+    color: var(--color-link-visited);
+}
+
+.article a:hover {
+    background: var(--color-accent-alpha);
+}
+
+.article ul,
+.article ol {
+    margin: 0 0 var(--line-space);
+    padding: 0;
+    list-style-position: inside;
+}
+
+.article .article__links-list ul {
+    list-style-position: outside;
+    list-style-type: square;
+}
+
+.article .article__links-list ul li {
+    margin-bottom: var(--line-space);
+    margin-left: var(--line-space);
+}
+
+.article ::marker {
+    color: var(--color-accent);
+}
+
+.article p {
+    margin: 0;
+    margin-bottom: var(--line-space);
+}
+
+.article blockquote {
+    position: relative;
+    margin: 0 0 var(--line-space);
+    padding-left: var(--line-space);
+}
+
+.article blockquote p:first-child {
+    margin-top: var(--line-space);
+}
+
+.article blockquote::before {
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-size: 3em;
+    transform: translateX(-100%);
+    content: '“';
+}
+
+@media (max-width: 750px) {
+    .article blockquote::before {
+        transform: translateX(-40%);
+    }
+}
+
+.article figure {
+    display: grid;
+    grid-template-columns: var(--main-column-width) 1fr;
+    grid-column: 1 / -1;
+    grid-gap: 0 1em;
+    margin: 0;
+    margin-bottom: var(--line-space);
+}
+
+.article figcaption {
+    max-width: calc(var(--max-column-width) - var(--main-column-width));
+    padding-right: 1em;
+    color: var(--color-subtext);
+    font-weight: 300;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.article figcaption code {
+    color: var(--color-code);
+}
+
+@media (max-width: 1250px) {
+    .article figure {
+        display: block;
+        grid-column: 1 / span 1;
+    }
+
+    .article figcaption {
+        max-width: none;
+        padding-right: 0;
+    }
+
+    .article figcaption p {
+        margin-bottom: 0;
+    }
+}
+
+.article video {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0 1px 0 var(--color-black);
+}
+
+.article img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0 1px 0 var(--color-black);
+}
+
+.article code,
+.article kbd {
+    padding: 0 0.3em;
+    font-family: var(--font-code);
+    word-break: break-word;
+    background: var(--color-accent-alpha);
+    border-radius: 5px;
+    font-variant-ligatures: none;
+}
+
+.article pre {
+    grid-column: 1 / -1;
+    margin: 0;
+    margin-bottom: var(--line-space);
+    margin-left: calc(-1 * var(--line-space));
+    overflow-x: auto;
+    border-radius: 0.3em 0 0 0.3em;
+}
+
+.article pre code {
+    padding: 0;
+    word-break: break-all;
+    background: none;
+}
+
+.article__footer {
+    margin-top: calc(2 * var(--line-space));
+    padding: var(--line-space) 0;
+    border-top: 1px solid var(--color-accent);
+}
+
+.article__share {
+    margin-bottom: var(--line-space);
+}
+
+.article__share-button::after {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: 0.25em;
+    vertical-align: middle;
+    background-image: url('/images/twitter-logo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+}
+
+.article__nav-button[class],
+.article__nav-button[class]:visited {
+    position: relative;
+    display: block;
+    padding: var(--line-space);
+    color: var(--color-text);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid var(--color-accent);
+}
+
+.article__nav-button.article__prev {
+    margin-bottom: var(--line-space);
+    padding-left: 3em;
+}
+
+.article__prev::before {
+    position: absolute;
+    top: 50%;
+    left: 0.5em;
+    font-size: 1.5em;
+    transform: translateY(-50%);
+    content: '←';
+}
+
+.article__nav-button.article__next {
+    padding-right: 3em;
+}
+
+.article__next::after {
+    position: absolute;
+    top: 50%;
+    right: 0.5em;
+    font-size: 1.5em;
+    transform: translateY(-50%);
+    content: '→';
+}
+
+.article .article__tags {
+    margin-bottom: var(--line-space);
+    padding: 0;
+}
+
+.article__webmentions {
+    padding: var(--line-space) 0;
+}
+
+@media (max-width: 1000px) {
+    .article {
+        grid-template-columns: 1fr;
+    }
+
+    .article .article__head {
+        grid-column: 1 / span 1;
+    }
+
+    .article pre {
+        margin-right: calc(-1 * var(--line-space));
+        border-radius: 0.3em;
+    }
+}
+
+@media (max-width: 800px) {
+    .article pre {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 750px) {
+    .article pre {
+        margin-right: calc(-1 * var(--mobile-border-width));
+        margin-left: calc(-1 * var(--mobile-border-width));
+        padding-right: var(--mobile-border-width);
+        padding-left: var(--mobile-border-width);
+        border-radius: 0;
+    }
+
+    .article figure {
+        margin-right: calc(-1 * var(--mobile-border-width));
+        margin-left: calc(-1 * var(--mobile-border-width));
+    }
+
+    .article figcaption {
+        padding-right: var(--mobile-border-width);
+        padding-left: var(--mobile-border-width);
+    }
+}

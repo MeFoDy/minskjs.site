@@ -1,0 +1,30 @@
+{
+    "short_name": "MinskJS",
+    "name": "MinskJS",
+    "lang": "ru",
+    "start_url": "/",
+    "scope": "/",
+    "display": "minimal-ui",
+    "orientation": "any",
+    "description": "Серия митапов MinskJS посвящена самому популярному языку программирования в вебе — JavaScript.",
+    "theme_color": "#266dba",
+    "background_color": "#ffffff",
+    "icons": [
+        {
+            "src": "images/favicon/minskjs-logo-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "images/favicon/minskjs-logo-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "images/favicon/minskjs-logo-512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "maskable"
+        }
+    ]
+}

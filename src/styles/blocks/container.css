@@ -1,0 +1,18 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr var(--max-column-width) 1fr;
+}
+
+.container__content {
+    grid-column: 2 / span 1;
+}
+
+.container__full {
+    grid-column: 1 / span 3;
+}
+
+@media (width <= 760px) {
+    .container {
+        grid-template-columns: var(--page-border-width) 1fr var(--page-border-width);
+    }
+}

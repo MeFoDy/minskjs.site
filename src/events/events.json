@@ -1,0 +1,7 @@
+{
+  "layout": "event.njk",
+  "tags": [
+    "event"
+  ],
+  "compactHeader": true
+}

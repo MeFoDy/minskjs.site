@@ -1,0 +1,138 @@
+.speaker {
+    --shadow-size: 7px;
+    padding: calc(2 * var(--line-space)) 0 calc(3 * var(--line-space));
+}
+
+.speaker h1,
+.speaker h2,
+.speaker h3 {
+    line-height: 1.33;
+    text-wrap: balance;
+}
+
+.speaker__info {
+    display: grid;
+    grid-template-columns: 1fr 192px;
+    gap: 0 calc(2 * var(--line-space));
+}
+
+.speaker__photo-wrapper {
+    width: 100%;
+}
+
+.speaker__photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--img-border-radius);
+}
+
+.speaker__data {
+    align-self: self-start;
+}
+
+.speaker__name {
+    margin: 0;
+    color: var(--color-darkred);
+    font-size: calc(var(--line-height) * 2em);
+}
+
+.speaker__about {
+    margin: 0;
+    margin-top: 1em;
+    padding: 0;
+}
+
+.speaker__separator {
+    margin: calc(1 * var(--line-space)) auto;
+}
+
+.speaker__talks-title {
+    margin-bottom: var(--line-space);
+    color: var(--color-darkred);
+    font-size: calc(var(--line-height) * 1em);
+}
+
+.speaker__talks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: calc(1.5 * var(--line-space));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.speaker__talk {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    overflow: hidden;
+    box-shadow:
+        var(--shadow-size) var(--shadow-size) var(--color-darkred),
+        calc(-1 * var(--shadow-size)) calc(-1 * var(--shadow-size)) var(--color-lightred);
+}
+
+.speaker__talk-preview-link {
+    display: flex;
+    width: 100%;
+}
+
+.speaker__talk-preview {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.speaker__talk-title {
+    margin: 0.7em 1em;
+    color: var(--color-text);
+    font-size: 1em;
+    line-height: var(--line-height);
+    text-decoration: none;
+}
+
+.speaker__talk-title h3 {
+    margin: 0;
+    font-weight: 400;
+}
+
+.speaker__talk-title:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-darkred);
+}
+
+.speaker__talk-meetup {
+    display: inline-block;
+    margin: 0 1em 1em;
+    color: var(--color-grey);
+    text-decoration: none;
+}
+
+.speaker__talk-meetup:hover {
+    text-decoration: underline;
+}
+
+@media (width < 1000px) {
+    .speaker__name {
+        font-size: calc(var(--line-height) * 1.5em);
+    }
+}
+
+@media (width < 660px) {
+    .speaker {
+        --shadow-size: 4px;
+    }
+
+    .speaker__info {
+        grid-template-columns: 1fr;
+    }
+
+    .speaker__data {
+        margin-bottom: var(--line-space);
+    }
+
+    .speaker__talks {
+        grid-template-columns: 1fr;
+    }
+}

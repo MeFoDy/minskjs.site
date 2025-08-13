@@ -1,0 +1,34 @@
+---
+layout: page.njk
+---
+
+<div class="speaker container__content">
+    <div class="speaker__info">
+        <div class="speaker__data">
+            <h1 class="speaker__name">{{name}}</h1>
+            <p class="speaker__about">{{about}}</p>
+        </div>
+        <div class="speaker__photo-wrapper">
+            <img src="{{id}}.jpg" alt="" class="speaker__photo">
+        </div>
+    </div>
+
+    <div class="speaker__separator separator"></div>
+
+    <h2 class="speaker__talks-title">Доклады</h2>
+    <ul class="speaker__talks">
+        {%- for item in collections.withTags | filterCollection('talk') | speakerTalks(id) -%}
+            <li class="speaker__talk">
+                <a href="/talks/{{item.data.id}}" class="speaker__talk-preview-link">
+                    <img src="/talks/{{item.data.id}}/{{item.data.youtubePreview}}" class="speaker__talk-preview" alt="">
+                </a>
+                <a href="/talks/{{item.data.id}}" class="speaker__talk-title">
+                    <h3>
+                        {{item.data.title}}
+                    </h3>
+                </a>
+                <a href="/events/{{item.data.event}}" class="speaker__talk-meetup">{{ collections.withTags | filterCollection('event') | getEventName(item.data.event) }}</a>
+            </li>
+        {%- endfor -%}
+    </ul>
+</div>

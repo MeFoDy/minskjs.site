@@ -1,0 +1,27 @@
+.page {
+    color: var(--color-text);
+    background: var(--color-bg);
+    transition:
+        color var(--transition-duration-l) var(--transition-timing),
+        background-color var(--transition-duration-l) var(--transition-timing);
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion) {
+    .page {
+        scroll-behavior: auto;
+    }
+}
+
+.page__body {
+    margin: 0;
+    font-size: var(--font-size);
+    font-family: var(--font-sans-serif);
+    line-height: var(--line-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.page__content {
+    margin: 0 auto;
+}

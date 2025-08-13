@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {{ renderData.title or title }}{% if not isIndex %} | {{ site.title }}{% endif %}
+        </title>
+
+        <meta name="color-scheme" content="light">
+
+        <meta name="description" content="{{ description or site.description }}">
+
+        <meta name="generator" content="Eleventy">
+
+        {% include 'favicon.njk' %}
+
+        {% include 'fonts.njk' %}
+
+        {% include 'meta-open-graph.njk' %}
+
+        <link rel="author" href="{{ site.paths.site }}/humans.txt">
+
+        <link rel="stylesheet" href="/styles/styles.css">
+    </head>
+
+    <body class="page__body">
+        {% if not hideHeader %}
+            {% include 'header.njk' %}
+        {% endif %}
+
+        <main class="page__content container">
+            {{ content | safe }}
+        </main>
+
+        {% include 'footer.njk' %}
+
+        {% include 'sw.njk' %}
+    </body>
+</html>

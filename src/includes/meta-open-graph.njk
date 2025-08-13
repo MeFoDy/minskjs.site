@@ -1,0 +1,28 @@
+{% if not isIndex %}
+    {% set titleSuffix = ' | ' + site.title %}
+{% else %}
+    {% set titleSuffix = '' %}
+{% endif %}
+
+{% set httpRegExp = r/^https?\:\/\/.*/g %}
+
+{% if cover %}
+    {% if httpRegExp.test(cover) %}
+        {% set ogImage = cover %}
+    {% else %}
+        {% set ogImage = site.paths.site + page.url + cover %}
+    {% endif %}
+{% else %}
+    {% set ogImage = site.paths.social %}
+{% endif %}
+
+<meta property="og:url" content="{{ site.paths.site }}{{ page.url }}"/>
+<meta property="og:title" content="{{ title }}{{ titleSuffix }}"/>
+<meta property="og:description" content="{{ description or site.description }}"/>
+{# <meta property="og:image" content="{{ ogImage }}"/> #}
+<meta property="og:type" content="website"/>
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:site" content="minskjs">
+
+<meta name="title" content="{{ title }}{{ titleSuffix }}"/>

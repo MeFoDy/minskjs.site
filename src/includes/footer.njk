@@ -1,0 +1,26 @@
+<footer class="footer container">
+    <div class="footer__info container__content">
+        <ul class="footer__social-list social-list">
+            <li class="social-list__item">
+                <a href="https://twitter.com/{{ site.twitter }}" rel="noopener" target="_blank" class="social-list__link social-list__link--twitter">Twitter</a>
+            </li>
+            <li class="social-list__item">
+                <a href="{{ site.paths.github }}" rel="noopener" target="_blank" class="social-list__link social-list__link--github">GitHub</a>
+            </li>
+            <li class="social-list__item">
+                <a href="{{ site.youtube }}" rel="noopener" target="_blank" class="social-list__link social-list__link--youtube">YouTube</a>
+            </li>
+            <li class="social-list__item">
+                <a href="{{ site.telegramChannel }}" rel="noopener" target="_blank" class="social-list__link social-list__link--tg">Telegram</a>
+            </li>
+        </ul>
+        <div class="separator footer__separator"></div>
+        <div class="footer__technologies">
+            Сайт сделан при помощи <a href="https://www.11ty.dev/" rel="noopener" target="_blank">11ty</a>. Исходный код можно найти на <a href="{{ site.paths.github }}" rel="noopener" target="_blank">GitHub</a>.
+        </div>
+        <div class="footer__copyright">
+            &copy;
+            {{ helpers.currentYear() }} / {{ site.title }}
+        </div>
+    </div>
+</footer>

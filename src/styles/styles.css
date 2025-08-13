@@ -1,0 +1,66 @@
+/* Blocks */
+@import './blocks/page.css';
+@import './blocks/container.css';
+@import './blocks/separator.css';
+@import './blocks/header.css';
+@import './blocks/site-nav.css';
+@import './blocks/footer.css';
+@import './blocks/social-list.css';
+@import './blocks/collection.css';
+@import './blocks/talks.css';
+@import './blocks/lite-yt-embed.css';
+@import './blocks/talk.css';
+@import './blocks/speaker.css';
+@import './blocks/event.css';
+@import './blocks/error-page.css';
+
+/* Variables */
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-darkred: #d42685;
+    --color-red: #f12b38;
+    --color-lightred: #f12b38;
+    --color-yellow: #fef221;
+    --color-grey: #777777;
+    --color-selection: pink;
+    --color-link: var(--color-red);
+    --color-link-visited: var(--color-darkred);
+    --color-bg: var(--color-white);
+    --color-text: var(--color-black);
+    --color-outline: var(--color-selection);
+
+    --line-height: 1.42;
+    --font-size: 20px;
+    --line-space: calc(var(--line-height) * 1em);
+    --max-column-width: 960px;
+    --page-border-width: 20px;
+    --img-border-radius: 20px;
+
+    --font-code: 'Fira Code', monospace;
+    --font-sans-serif: 'Roboto', system-ui, sans-serif;
+}
+
+/* Global styles */
+:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--color-outline);
+}
+
+::selection {
+    color: var(--color-text);
+    background: var(--color-selection);
+}
+
+@media (width < 1000px) {
+    :root{
+        --page-border-width: 20px;
+        --max-column-width: 670px;
+    }
+}
+
+@media (width <= 760px) {
+    :root {
+        --font-size: 18px;
+    }
+}

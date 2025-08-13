@@ -1,0 +1,35 @@
+---
+layout: page.njk
+hideHeader: true
+---
+
+<div class="event container__content">
+    <div class="event__info">
+        <div class="event__data">
+            <h1 class="event__name">{{name}}</h1>
+            <p class="event__date">
+                {{date | readableDate}} в {{time}} <a href="{{icsCalendarLink}}" download>[Добавить в календарь]</a>
+            </p>
+            <p class="event__about">{{about}}</p>
+        </div>
+    </div>
+
+    <div class="event__video">
+        {% set videoTitle = name %}
+        {% set videoId = youtubeVideoId %}
+        {% include 'youtube.njk' %}
+    </div>
+
+    <h2 class="event__talks-title">Программа</h2>
+
+    <div class="event__talks">
+        {{ content | safe }}
+    </div>
+
+    <div class="event__separator separator"></div>
+
+    <div class="event__footer">
+        <p>Следить за нашими новостями и другими анонсами можно в <a href="{{site.telegramChannel}}" target="_blank" rel="noopener">Telegram</a> и <a href="https://x.com/{{site.twitter}}" target="_blank" rel="noopener">Twitter</a>. Трансляции всегда идут на нашем канале на <a href="{{site.youtube}}" target="_blank" rel="noopener">YouTube</a>. Задать вопросы о событии и просто пообщаться можно в <a href="{{site.telegramChat}}" target="_blank" rel="noopener">чате MinskCSS/MinskJS</a>.</p>
+    </div>
+
+</div>

@@ -1,0 +1,24 @@
+---
+layout: page.njk
+---
+<article class="article">
+    <div class="article__head">
+        <h1 class="article__title">{{ title }}</h1>
+        <div class="article__meta">
+            <time class="article__datetime" datetime="{{ page.date.toISOString() }}">{{ page.date | readableDate }}</time>
+            <a href="https://github.com/MeFoDy/mefody.dev/blob/main/{{ page.inputPath }}" class="article__github">Редактировать на GitHub</a>
+        </div>
+    </div>
+    {{ content | safe }}
+    <div class="article__footer">
+        <div class="article__share">
+            Если тебе понравился этот доклад, <a class="article__share-button" href="https://twitter.com/intent/tweet?text=Доклад «{{ title }}» на @{{ site.twitter }}&url={{ site.paths.site }}{{ page.url }}" target="_blank" rel="noopener">можешь пошарить его в Twitter</a>
+        </div>
+        {% set previousTalk = collections.talk | getPreviousCollectionItem(page) %}
+        {% set nextTalk = collections.talk | getNextCollectionItem(page) %}
+        <div class="article__nav">
+            {% if previousTalk %}<a href="{{ previousTalk.url }}" class="article__nav-button article__prev">{{ previousTalk.data.title }}</a>{% endif %}
+            {% if nextTalk %}<a href="{{ nextTalk.url }}" class="article__nav-button article__next">{{ nextTalk.data.title }}</a>{% endif %}
+        </div>
+    </div>
+</article>

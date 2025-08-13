@@ -1,0 +1,40 @@
+.header {
+    --title-size: 128px;
+    --ornament-size: 240px;
+    color: var(--color-white);
+    background-color: var(--color-red);
+}
+
+.header__link {
+    display: inline-block;
+    margin: calc(var(--title-size) / 2) auto 0;
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: var(--title-size);
+    text-decoration: none;
+}
+
+.header__title {
+    margin-bottom: calc(var(--title-size) / 1.5);
+    text-align: center;
+}
+
+.header__about {
+    max-width: 760px;
+    margin: calc(var(--title-size) / 3) auto 0;
+    text-wrap: pretty;
+}
+
+@media (width < 1000px) {
+    .header {
+        --title-size: 96px;
+        --ornament-size: 160px;
+    }
+}
+
+@media (width < 600px) {
+    .header {
+        --title-size: 46px;
+        --ornament-size: 120px;
+    }
+}

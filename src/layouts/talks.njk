@@ -1,0 +1,33 @@
+---
+layout: page.njk
+---
+<div class="talks">
+    <div class="talks__head">
+        <h1 class="talks__title">{{ title }}</h1>
+        <p class="talks__description">
+            {{ description }}
+        </p>
+    </div>
+    <div class="talks__section">
+        <ul class="talks__list">
+            {%- for talk in talks | reverse -%}
+                <li class="talks__talk talk">
+                    <h3 class="talk__title">{{ talk.title }}</h3>
+                    <p class="talk__description">{{ talk.description }}</p>
+                    <div class="talk__meetup">
+                        <time class="talk__datetime" datetime="{{ talk.date }}">{{ talk.dateObj | readableDate }}</time>
+                        <a href="{{ talk.conferenceLink }}" class="talk__meetup" target="_blank" rel="noopener">{{ talk.conference }}</a>
+                        <span class="talk__language">{{ talk.language }}</span>
+                    </div>
+                    <div class="talk__links">
+                        <span><a href="{{ talk.slidesLink }}" target="_blank" rel="noopener" class="talk__slides">Слайды</a></span>
+
+                        {% if talk.video %}
+                            <span><a href="{{ talk.video }}" target="_blank" rel="noopener" class="talk__video">Видео</a></span>
+                        {% endif %}
+                    </div>
+                </li>
+            {%- endfor -%}
+        </ul>
+    </div>
+</div>

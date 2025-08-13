@@ -1,0 +1,34 @@
+<header class="header {% if compactHeader %}header--compact{% endif %} container">
+    <nav class="header__nav site-nav container__content">
+        <ul class="site-nav__list">
+            {% if compactHeader %}
+                <li class="site-nav__item site-nav__item--main">
+                    <a href="/">{{ site.title }}</a>
+                </li>
+            {% endif %}
+            <li class="site-nav__item">
+                <a href="/events/">Митапы</a>
+            </li>
+            <li class="site-nav__item">
+                <a href="/talks/">Доклады</a>
+            </li>
+            <li class="site-nav__item">
+                <a href="/speakers/">Спикеры</a>
+            </li>
+            {# <li class="site-nav__item">
+                <a href="/cfp/">CFP</a>
+            </li> #}
+        </ul>
+    </nav>
+    {% if not compactHeader %}
+    <div class="header__title container__content">
+        <a href="/" class="header__link">
+            {{ site.title }}
+        </a>
+        <div class="separator header__separator"></div>
+        <p class="header__about">
+            {{site.description}}
+        </p>
+    {% endif %}
+    </div>
+</header>

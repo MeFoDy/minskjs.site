@@ -1,0 +1,134 @@
+.event {
+    --shadow-size: 7px;
+    padding: calc(2 * var(--line-space)) 0 calc(3 * var(--line-space));
+}
+
+.event h1,
+.event h2,
+.event h3 {
+    margin: 0;
+    margin-bottom: 1em;
+    line-height: 1.33;
+    text-wrap: balance;
+}
+
+.event a {
+    color: var(--color-darkred);
+}
+
+.event a:is(:hover, :focus) {
+    color: var(--color-red);
+}
+
+.event p {
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+.event__info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 calc(2 * var(--line-space));
+}
+
+.event__data {
+    align-self: self-start;
+}
+
+.event__name {
+    margin: 0;
+    color: var(--color-darkred);
+    font-size: calc(var(--line-height) * 2em);
+}
+
+.event__date {
+    font-weight: bold;
+}
+
+.event__about {
+    margin: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0;
+}
+
+.event__video {
+    display: grid;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    place-items: center;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+.event__video lite-youtube {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 16 / 9;
+}
+
+.event__separator {
+    margin: calc(2 * var(--line-space)) auto;
+    background-color: var(--color-red);
+}
+
+.event__talks-title {
+    color: var(--color-darkred);
+    font-size: calc(var(--line-height) * 1em);
+}
+
+.event__talks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(3 * var(--line-space));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.event__talk {
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    gap: 0 calc(1 * var(--line-space));
+}
+
+.event__talk-time {
+    grid-row: span 2;
+    grid-column: 1;
+    font-style: italic;
+}
+
+.event__talk-info {
+    grid-column: 2;
+}
+
+.event__talk-title {
+    grid-column: 2;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+.event__speaker {
+    grid-column: 2;
+    font-weight: bold;
+}
+
+.event__speaker-photo {
+    grid-row: span 3;
+    grid-column: 1;
+    width: 128px;
+    border-radius: calc(1px * infinity);
+}
+
+@media (width <= 760px) {
+    .event__talk {
+        grid-template-columns: 1fr;
+    }
+
+    .event__talk > * {
+        grid-column: 1;
+    }
+
+    .event__speaker-photo {
+        margin-bottom: 1em;
+    }
+}
