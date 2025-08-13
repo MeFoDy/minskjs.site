@@ -50,7 +50,7 @@ gulp.task('clean', () => {
         `${PUBLIC_PATH}/styles/**/*`,
         `!${PUBLIC_PATH}/styles/{styles,dark}.css`,
         `${PUBLIC_PATH}/scripts/**/*`,
-        `!${PUBLIC_PATH}/scripts/scripts.js`,
+        `!${PUBLIC_PATH}/scripts/{lite-yt-embed,scripts}.js`,
     ]);
 });
 
