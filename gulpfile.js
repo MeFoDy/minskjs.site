@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
-// const swc = require('gulp-swc');
+const swc = require('gulp-swc');
 const del = require('del');
 const rev = require('gulp-rev');
 const revRewrite = require('gulp-rev-rewrite');
