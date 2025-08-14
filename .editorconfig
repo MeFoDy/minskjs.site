@@ -16,3 +16,6 @@ indent_size = off
 
 [src/data/contributors.json]
 insert_final_newline = false
+
+[bin/**/*]
+indent_size = unset
