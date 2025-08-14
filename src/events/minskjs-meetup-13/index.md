@@ -28,7 +28,7 @@ icsCalendarLink: minskjs-meetup-13.ics
     </div>
     <img src="photos/vasiliy-vanchuk.jpg" alt="" class="event__speaker-photo">
     <p class="event__speaker">Василий Ванчук</p>
-    <p class="event__talk-info">Увлечённый разработчик, который любит нестандартные задачи, кодить и общаться. Обращает внимание на саморазвитие, много читает и помогает развиваться другим. Преподает на курсах и является активным участником сообщества Web Not Bombs.</p>
+    <p class="event__talk-info">Кандидат-разрядник, несколько лет подряд брал планку в 120 собеседований. Активный интервьюер (100 собеседований в год для компаний Bolt и Т-Банк). Собеседует спикеров на HolyJS.</p>
 </div>
 
 <div class="event__talk">
