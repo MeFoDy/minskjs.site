@@ -59,6 +59,10 @@
     place-items: center;
 }
 
+.event__video-link {
+    margin-top: 1em;
+}
+
 /* stylelint-disable-next-line selector-type-no-unknown */
 .event__video lite-youtube {
     width: 100%;
